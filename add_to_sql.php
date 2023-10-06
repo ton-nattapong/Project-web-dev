@@ -72,11 +72,12 @@ foreach ($_SESSION["cart"] as $cartItem) {
     }
 }
 //insert ข้อมูลเข้าตาราง bill
-$addto = $pdo->prepare("INSERT INTO bill VALUES (NULL, :result, current_timestamp());");
+$addto = $pdo->prepare("INSERT INTO bill (column1, column2, column3) VALUES (NULL, :result, current_timestamp());");
 $addto->bindParam(':result', $result);
 $addto->execute();
 
-$empid = "1000";
+
+$empid = $_COOKIE["empid"];
 $making_detail = '';
 //insert ข้อมูลเข้าตาราง makings
 for($k=0;$k<= $maxIndex;$k++){
@@ -95,4 +96,3 @@ exit();
 
 
 ?>
-
