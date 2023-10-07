@@ -41,10 +41,11 @@ $cartItemCount = array_count_values($_SESSION["cart"]);
 </head>
 <body>
     <div class="wrapper">
-        <div class="topnav">
-            <a href="frist.php" style="color:#FBB813">Shop</a>
-            <a href="showquery.php">Query</a>
-            <a href="cart.php">Cart</a>
+        <div class="topnav">     
+            <a href="#"><img src="./image/logo.png" height="30px" ></a>
+            <a class = "linkbutt" style="color:#FBB813;" href="frist.php">Shop</a>
+            <a class = "linkbutt" href="showquery.php">Query</a>
+            <a class = "linkbutt" href="logout.php">logout</a>        
         </div>
         <img src="./image/topcart.png" height="300">
         <div class="content">

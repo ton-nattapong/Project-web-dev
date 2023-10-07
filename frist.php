@@ -46,9 +46,8 @@ $stmt->execute();
         <div class="topnav">     
             <a href="#"><img src="./image/logo.png" height="30px" ></a>
             <a class = "linkbutt" style="color:#FBB813;" href="frist.php">Shop</a>
-            <a class = "linkbutt" href="login_emp.php">emp</a>
-            <a class = "linkbutt" href="logout.php">logout</a>
             <a class = "linkbutt" href="showquery.php">Query</a>
+            <a class = "linkbutt" href="logout.php">logout</a>
             <a class = "cartbutt" href="cart.php"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>             
         </div>
             <form  class="serch-box">

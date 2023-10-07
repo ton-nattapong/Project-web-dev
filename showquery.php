@@ -13,12 +13,10 @@
     <div class="topnav">     
             <a href="#"><img src="./image/logo.png" height="30px" ></a>
             <a class = "linkbutt" style="color:#FBB813;" href="frist.php">Shop</a>
-            <a class = "linkbutt" href="login_emp.php">emp</a>
-            <a class = "linkbutt" href="logout.php">logout</a>
             <a class = "linkbutt" href="showquery.php">Query</a>
-            <a class = "cartbutt" href="cart.php"><i class="fa-solid fa-cart-shopping fa-xl " style="color: #00EDA2;"></i></a>             
+            <a class = "linkbutt" href="logout.php">logout</a>
+            <a class = "cartbutt" href="cart.php"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>             
         </div>
-    </div>
     
     <?php
     $stmt = $pdo->prepare("SELECT menu.menu_Name,COUNT(menu.menu_Name) FROM menu,makings WHERE makings.menu_No = menu.menu_No GROUP BY menu_Name ORDER BY COUNT(menu.menu_Name) DESC LIMIT 3;");

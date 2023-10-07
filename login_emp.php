@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="login-style.css">
+        <link rel="stylesheet" href="login.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&family=Lato:ital,wght@1,300&family=Open+Sans:wght@300&family=Prompt:wght@300&display=swap" rel="stylesheet">
@@ -9,7 +9,7 @@
     <body>
         <form action="login_emp_sql.php" method="get">
         <div class="input-login">
-            <p>ID : </p>
+            <p>Enter your employee ID </p>
             <input type="text" name="emp_Id"><br>
             <input type="submit" class="loginbut" value="LOGIN" name="login_user" >
         </div>

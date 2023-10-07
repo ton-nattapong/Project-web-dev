@@ -72,7 +72,7 @@ foreach ($_SESSION["cart"] as $cartItem) {
     }
 }
 //insert ข้อมูลเข้าตาราง bill
-$addto = $pdo->prepare("INSERT INTO bill (column1, column2, column3) VALUES (NULL, :result, current_timestamp());");
+$addto = $pdo->prepare("INSERT INTO bill VALUES (NULL, :result, current_timestamp());");
 $addto->bindParam(':result', $result);
 $addto->execute();
 
