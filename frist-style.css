@@ -139,9 +139,8 @@ main {
     justify-content: space-between; /* ใช้ justify-content เพื่อกระจายเมนูให้เต็มแถว */
 }
 
-article {
+.menu {
     flex-wrap: wrap; /* ใช้ flex-wrap เพื่อให้แสดงเมนูในแนวนอนและขึ้นรายการใหม่เมื่อครบ 3 รายการ */
-    justify-content: space-between;
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
@@ -152,11 +151,11 @@ article {
     text-align: center;
 }
 
-article:hover {
+.menu:hover {
     transform: scale(1.02); 
 }
 
-article img {
+.menu img {
     max-width: 100%;
     height: auto;
     display: block; /* ปรับรูปภาพให้แสดงตรงกลาง */
@@ -200,25 +199,25 @@ article img {
     background-color: #006142;
 }
 @media (max-width: 700px) {
-    article {
+    .menu {
         width: calc(100% - 20px); 
     }
 }
 
 @media (min-width: 701px){
-    article {
+    .menu {
         width: calc(46% - 20px); 
     }
 }
 
 @media (min-width: 1101px){
-    article {
+    .menu {
         width: calc(30% - 20px);
     }
 }
 
 @media (min-width: 1440px){
-    article {
+    .menu {
         width: calc(23% - 20px); 
     }
 }
@@ -237,4 +236,7 @@ article img {
     margin-top: 10px;
     border-radius: 12px;
     background-color: white;
+}
+.pagination{
+    background-color: #0e251a;
 }
