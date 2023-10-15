@@ -43,7 +43,8 @@ include "connect.php";
     
     <header>
         <div class="topnav" id="topnav">     
-            <a href="#"><img src="./image/logo.png" height="30px" ></a>
+          
+            <a href="setting.php"><img src="./image/logo.png" height="30px" ></a>
             <a class = "linkbutt" style="color:#FBB813;" href="frist.php">Shop</a>
             <a class = "linkbutt" href="showquery.php">Query</a>
             <a class = "linkbutt" href="logout.php">logout</a>
@@ -90,7 +91,7 @@ include "connect.php";
         </main>
         <div class="pagination">
                 <?php if ($page > 1): ?>
-                <a href="?page=<?= ($page - 1) ?>">หน้าก่อนหน้า</a>
+                <a href="?page=<?= ($page - 1) ?>">หน้าก่อนหน้า </a>
 
                 <?php endif; ?>
 
@@ -102,7 +103,7 @@ include "connect.php";
 
                 if ($page < $totalPages): ?>
 
-                <a href="?page=<?= ($page + 1) ?>">หน้าถัดไป</a>
+                <a href="?page=<?= ($page + 1) ?>"> หน้าถัดไป</a>
 
                 <?php endif; ?>
             </div>

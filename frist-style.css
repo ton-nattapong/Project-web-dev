@@ -239,4 +239,11 @@ main {
 }
 .pagination{
     background-color: #0e251a;
+    
+}
+.pagination a{
+    text-decoration: none;
+    color: white;
+   
+    
 }
