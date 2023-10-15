@@ -33,56 +33,67 @@ $cartItemCount = array_count_values($_SESSION["cart"]);
 
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="cart-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&family=Lato:ital,wght@1,300&family=Open+Sans:wght@300&family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="wrapper">
-        <div class="topnav">     
-            <a href="#"><img src="./image/logo.png" height="30px" ></a>
-            <a class = "linkbutt" style="color:#FBB813;" href="frist.php">Shop</a>
-            <a class = "linkbutt" href="showquery.php">Query</a>
-            <a class = "linkbutt" href="logout.php">logout</a>        
-        </div>
+        <header>
+             <div class="topnav">  
+            <a href="#"><img src="./image/logo.png" height="30px" alt="Logo"></a>
+            <nav>
+                <a class="linkbutt" style="color:#FBB813;" href="frist.php">Shop</a>
+                <a class="linkbutt" href="showquery.php">Query</a>
+                <a class="linkbutt" href="logout.php">logout</a>
+            </nav>
+            </div>
+        </header>
         <img src="./image/topcart.png" height="300">
-        <div class="content">
-        
+        <main class="content">
             <?php if (!empty($cartItemCount)): ?>
                 <table>
-                    <tr>
-                        <th>Menu No</th>
-                        <th>Menu Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Action</th> <!-- เพิ่มคอลัมน์ Action สำหรับปุ่มลบ -->
-                    </tr>
-                    <?php while ($row = $stmt->fetch()): ?>
+                    <thead>
                         <tr>
-                            <td><?= $row["menu_No"] ?></td>
-                            <td><?= $row["menu_Name"] ?></td>
-                            <td><?= $row["price"] * $cartItemCount[$row["menu_No"]] ?></td>
-                            <td><?= $cartItemCount[$row["menu_No"]] ?></td>
-                            <td>
-                                <a href="remove_from_cart.php?menu_No=<?= $row["menu_No"] ?>">ลบ</a>&nbsp;
-                                <a href="add_from_cart.php?menu_No=<?= $row["menu_No"] ?>">เพิ่ม</a>
-                            </td>
+                            <th>Menu No</th>
+                            <th>Menu Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
                         </tr>
-                    <?php endwhile; ?>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = $stmt->fetch()): ?>
+                            <tr>
+                                <td><?= $row["menu_No"] ?></td>
+                                <td><?= $row["menu_Name"] ?></td>
+                                <td><?= $row["price"] * $cartItemCount[$row["menu_No"]] ?></td>
+                                <td><?= $cartItemCount[$row["menu_No"]] ?></td>
+                                <td>
+                                    <a href="remove_from_cart.php?menu_No=<?= $row["menu_No"] ?>">ลด</a>&nbsp;
+                                    <a href="add_from_cart.php?menu_No=<?= $row["menu_No"] ?>">เพิ่ม</a>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
                 </table>
-                <a href="add_to_sql.php" ><input type="submit" class="confirm-button" value="ยืนยันการซื้อสินค้า"></a>
-
+                <form action="add_to_sql.php" method="POST">
+                    <input type="submit" class="confirm-button" value="Confirm Purchase">
+                </form>
             <?php else: ?>
                 <p>Your cart is empty.</p>
             <?php endif; ?>
-        </div>
-
-
-        <div class="footer">
-            <div>Footer</div>    
-        </div>
+        </main>
+        <footer class="footer">
+            
+        </footer>
     </div>
 </body>
 </html>

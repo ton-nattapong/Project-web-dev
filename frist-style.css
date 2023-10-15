@@ -23,14 +23,11 @@ input#serch-name{
 }
 form.serch-box{
     background-color: #0e251a;
+    text-align: right;
+    padding-bottom: 15px;
   
 }
-.serch-box{
-    text-align: right;
-   
-    padding-bottom: 15px;
-    
-}
+
 .serch-box input{
     margin-right: 10px;
    
@@ -93,7 +90,7 @@ body {
 }
 .topnav .cartbutt {
     float: right;
-    color: #00EDA2;
+    color: white;
     text-align: center;
     padding: 27px 16px;
     
@@ -117,10 +114,8 @@ body {
     text-decoration: none;
     
 }
-.content {
-     
+main {
     padding: 10px;
-    height: 200px; /* Should be removed. Only for demonstration */
     background-color: #0e251a;
 }
   
@@ -131,20 +126,22 @@ body {
 
 }
 /* style.css */
-.wrapper {
-    display: flex;
-    flex-direction: column;
+header {
+   
     min-height: 100vh; /* ทำให้ wrapper มีความสูงเท่ากับหน้าจอ */
 }
 
-.content {
+main {
+    
     flex: 1;
     display: flex;
     flex-wrap: wrap; /* ใช้ flex-wrap เพื่อให้แสดงเมนูในแนวนอนและขึ้นรายการใหม่เมื่อครบ 3 รายการ */
     justify-content: space-between; /* ใช้ justify-content เพื่อกระจายเมนูให้เต็มแถว */
 }
 
-.menu {
+article {
+    flex-wrap: wrap; /* ใช้ flex-wrap เพื่อให้แสดงเมนูในแนวนอนและขึ้นรายการใหม่เมื่อครบ 3 รายการ */
+    justify-content: space-between;
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
@@ -155,11 +152,11 @@ body {
     text-align: center;
 }
 
-.menu:hover {
-    transform: scale(1.02); /* ปรับขนาดของเมนูเล็กน้อยเมื่อ hover */
+article:hover {
+    transform: scale(1.02); 
 }
 
-.menu img {
+article img {
     max-width: 100%;
     height: auto;
     display: block; /* ปรับรูปภาพให้แสดงตรงกลาง */
@@ -169,24 +166,21 @@ body {
 
 
 /* เพิ่มลักษณะขอบแบบครอบรอบ */
-.menu h3 {
-    font-size: 18px;
-    margin: 0;
-    padding: 5px 0;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-}
 
-.menu p {
-    margin: 10px 0;
-    text-align: center;
+#nametag{
+    align-items: center;
+   
+    
+    color: #333;
+}
+#pricetag{
+    align-items: center;
+   
     font-weight: bold;
     color: #333;
 }
 
-.container {
-    text-align: center; /* จัดให้เนื้อหาภายใน container อยู่ตรงกลาง */
-}
+
 
 #center-button {
     padding: 10px 20px; /* ปรับขนาดของปุ่ม */
@@ -206,29 +200,41 @@ body {
     background-color: #006142;
 }
 @media (max-width: 700px) {
-    .menu {
-        width: calc(100% - 20px); /* For smaller screens, display one menu item per row */
+    article {
+        width: calc(100% - 20px); 
     }
 }
 
 @media (min-width: 701px){
-    .menu {
-        width: calc(46% - 20px); /* For medium screens, display two menu items per row */
+    article {
+        width: calc(46% - 20px); 
     }
 }
 
 @media (min-width: 1101px){
-    .menu {
-        width: calc(30% - 20px); /* For medium screens, display two menu items per row */
+    article {
+        width: calc(30% - 20px);
     }
 }
 
 @media (min-width: 1440px){
-    .menu {
-        width: calc(23% - 20px); /* For medium screens, display two menu items per row */
+    article {
+        width: calc(23% - 20px); 
     }
 }
+.dark-theme {
+    background-color: #333; /* เปลี่ยนสีพื้นหลังเป็นสีมืด */
+    color: #fff; /* เปลี่ยนสีข้อความเป็นสีขาว */
+}
 
-
-
-
+.button-color{
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 7px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: white;
+}

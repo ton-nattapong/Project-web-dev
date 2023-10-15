@@ -20,15 +20,18 @@ body{
 }
 
 input{
+    margin: 10px;
     width: 200px;
+    border-radius: 5px;
 }
-.loginbut:active{
+.login-button:active{
     opacity: 0.4;
 }
-.loginbut{
+.login-button{
     background-color: #FBB813;
 }
-p{
+h1{
+    text-align: center;
     font-size:16px;
     
 }

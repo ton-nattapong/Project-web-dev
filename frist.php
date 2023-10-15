@@ -28,29 +28,38 @@ $stmt->execute();
                 var idnumStr = idnum.join(',');
                 window.location.href = "cart.php?menu_No=" + idnum;
             }
-            
+            function changetheme() {
+                var content = document.getElementById("content");
+                var topnav = document.getElementById("topnav");
+                var serchbox = document.getElementById("serch-box");
+                content.style.background = "#526D82";
+                topnav.style.background = "#27374D";
+                serchbox.style.background = "#526D82";
+            }
            
             </script>
             <script>
-               function addToCart(menuNo) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "cart.php?menu_No=" + menuNo, true);
-        xhr.send();
-    }
+                function addToCart(menuNo) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("GET", "cart.php?menu_No=" + menuNo, true);
+                    xhr.send();
+                 }
             </script>
             
     </head>
 <body>
     
-    <div class="wrapper">
-        <div class="topnav">     
+    <header>
+        <div class="topnav" id="topnav">     
             <a href="#"><img src="./image/logo.png" height="30px" ></a>
             <a class = "linkbutt" style="color:#FBB813;" href="frist.php">Shop</a>
             <a class = "linkbutt" href="showquery.php">Query</a>
             <a class = "linkbutt" href="logout.php">logout</a>
             <a class = "cartbutt" href="cart.php"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>             
+            <button class = "button-color" onclick="changetheme()">dark mode  <i class="fa-solid fa-moon fa-xl" style="color: #000000;"></i></button>
+             
         </div>
-            <form  class="serch-box">
+             <form  class="serch-box" id="serch-box">
                 <br><input type="text" id="serch-name" name="serch-name" placeholder="  ค้นหาเมนู">
                 
                  
@@ -58,7 +67,7 @@ $stmt->execute();
                     <i class="fa-solid fa-magnifying-glass fa-xl"></i> 
                 </button>
          
-            </form>
+        </form>
             <?php
                 $stmt = $pdo->prepare("SELECT * FROM menu WHERE menu_Name LIKE ?");
                 if (!empty($_GET)) // ถ ้ามีค่าที่สงมาจากฟอร์ม ่
@@ -85,36 +94,28 @@ $stmt->execute();
                     <br><br>
                 </div>
             <?php endwhile; ?>
-        <div class="content">
-          
+        <main id="content">
+       
             <?php
                 $stmt = $pdo->prepare("SELECT * FROM menu");
                 $stmt->execute(); // เริ่มค้นหา
             ?>
             <?php while ($row = $stmt->fetch()): ?>
-                <div class="menu">  
+                <article>  
                     <img src='image/<?= $row["menu_Name"] ?>.jpg' >
                     <!-- <?= "menu_No:" . $row["menu_No"] ?><br> -->
-                    <p id="nametag">
-                        <?= $row["menu_Name"]  ?><br>
-                        
-                    </p>
-                    <p id="pricetag">
-                    <?= $row["price"] ." บาท   " ?>  
-                    </p>
-                    
-                    <div class="container">
-                  
+                    <h2 id="nametag"><?= $row["menu_Name"]  ?></h2>
+                    <p id="pricetag"><?= $row["price"] ." บาท   " ?></p><br>
                     <i id="center-button" class="fa-solid fa-cart-plus fa-2xl" name="bt-cart" onclick="addToCart(<?php echo $row["menu_No"]; ?>)"></i> <br><br>
                        
-                </div>
-                </div>
+                    
+                </article>
             <?php endwhile; ?>
-        </div>
+        </main>
         
         <div class="footer">
             
         </div>
-    </div>
+   </header>
 </body>
 </html>
